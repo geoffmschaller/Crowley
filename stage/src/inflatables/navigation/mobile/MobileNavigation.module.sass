@@ -1,0 +1,125 @@
+$mid-bar-color: #1b4f72
+$nav-text-color: #f4f6f6
+$nav-text-highlight: #f8c471
+
+.navigation
+	width: 100%
+	text-align: center
+	background: rgb(21, 67, 96)
+	background: -moz-linear-gradient(169deg, rgba(21, 67, 96, 1) 35%, rgba(46, 134, 193, 1) 100%)
+	background: -webkit-linear-gradient(169deg, rgba(21, 67, 96, 1) 35%, rgba(46, 134, 193, 1) 100%)
+	background: linear-gradient(169deg, rgba(21, 67, 96, 1) 35%, rgba(46, 134, 193, 1) 100%)
+
+	.display
+		width: 100%
+		padding: 20px 5px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
+		img
+			width: 100%
+
+		.menuButton
+			padding: 10px 0
+			color: $nav-text-color
+			font-size: 20px
+			text-transform: uppercase
+
+	.closeBar
+		padding: 10px
+		font-size: 20px
+		color: white
+		text-align: right
+		margin-bottom: 30px
+		text-shadow: 1px 1px 1px black
+
+	.rotateOpen
+		transition: all .2s ease-in-out
+		animation: openSlider 0.5s forwards
+
+	.rotateClosed
+		transition: all .2s ease-in-out
+		animation: closeSlider 0.5s forwards
+
+	.background
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		background-color: black
+		z-index: 1000
+
+	.showBackground
+		animation: fadeBackground 0.5s forwards ease-in-out
+
+	.hideBackground
+		animation: hideBackground 0.5s forwards ease-in-out
+
+	.menu
+		width: 100%
+		position: absolute
+		top: 10%
+		left: -100vw
+		z-index: 1002
+		padding: 20px
+
+		.item
+			width: 100%
+			margin-bottom: 30px
+			color: $nav-text-color
+			text-transform: uppercase
+			font-size: 22px
+			font-weight: bold
+			text-shadow: 1px 1px 1px black
+
+			img
+				width: 100%
+
+	.menuOpen
+		animation: openMenu 0.7s forwards
+
+	.menuClosed
+		animation: closeMenu 0.2s forwards
+
+@keyframes fadeBackground
+	0%
+		width: 0
+		opacity: 0
+
+	1%
+		width: 100%
+
+	100%
+		width: 100%
+		opacity: 0.5
+
+@keyframes hideBackground
+	0%
+		width: 100%
+		opacity: 0.5
+
+	99%
+		width: 100%
+
+	100%
+		width: 0
+		opacity: 0
+
+@keyframes openMenu
+	0%
+		left: -100vw
+
+	100%
+		left: 0
+
+@keyframes closeMenu
+	0%
+		left: 0
+
+	100%
+		left: -100vw
+
+@media (min-width: 1023px)
+	.navigation
+		display: none

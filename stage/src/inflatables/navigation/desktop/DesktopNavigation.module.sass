@@ -1,0 +1,63 @@
+$top-bar-color: #154360
+$mid-bar-color: #1b4f72
+$nav-text-color: #f4f6f6
+$nav-text-highlight: #f8c471
+
+.navigation
+	width: 100%
+	display: block
+
+	.topBar
+		width: 100%
+		padding: 10px 40px
+		background-color: $top-bar-color
+		color: $nav-text-color
+		text-align: right
+		text-transform: uppercase
+
+	.midBar
+		width: 100%
+		padding: 20px 50px
+		background-color: $mid-bar-color
+
+		.display
+			width: 100%
+			max-width: 1500px
+			margin: 0 auto
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+
+			.menu
+				display: flex
+				flex-direction: row
+				justify-content: space-evenly
+				padding-top: 30px
+
+				.item
+					width: 220px
+					text-align: center
+					color: $nav-text-color
+					font-size: 1.2vw
+					text-transform: uppercase
+					cursor: pointer
+					transition: all .2s ease-in-out
+
+					&:hover
+						color: #f8c471
+
+@media (max-width: 1023px)
+	.navigation
+		.topBar
+			text-align: center
+
+		.midBar
+			display: none
+
+@media (max-width: 1160px)
+	.navigation
+		.midBar
+			.display
+				.menu
+					.item
+						width: 150px
