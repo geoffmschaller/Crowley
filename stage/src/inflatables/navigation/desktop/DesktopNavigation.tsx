@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './DesktopNavigation.module.sass';
-import MAIN_LOGO from '../../../static/images/mainlogo2.png';
+import MAIN_LOGO from '../../../static/images/logos/mainlogo2.png';
 import {Link} from "react-router-dom";
 
 const DesktopNavigation = () => {
@@ -13,10 +13,18 @@ const DesktopNavigation = () => {
 						<img src={MAIN_LOGO} alt=""/>
 					</Link>
 					<div className={styles.menu}>
-						<div className={styles.item}>Interiors</div>
-						<div className={styles.item}>Exteriors</div>
-						<div className={styles.item}>Custom Projects</div>
-						<div className={styles.item}>Contact Us</div>
+						<Link to={"/interiors"}>
+							<div className={styles.item}>Interiors</div>
+						</Link>
+						<Link to={"/exteriors"}>
+							<div className={styles.item}>Exteriors</div>
+						</Link>
+						<Link to={"/custom-projects"}>
+							<div className={styles.item}>Custom Projects</div>
+						</Link>
+						<Link to={"/contact"}>
+							<div className={styles.item}>Contact Us</div>
+						</Link>
 					</div>
 				</div>
 			</div>

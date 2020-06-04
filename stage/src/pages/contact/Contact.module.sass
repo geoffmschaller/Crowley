@@ -1,0 +1,95 @@
+
+.contact
+	width: 100%
+
+	.holder
+		width: 100%
+		margin-top: 100px
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+		.form
+			width: 60%
+			padding: 0 10px
+
+			.title
+				font-size: 20px
+				text-transform: uppercase
+				color: #566573
+
+			.description
+				font-size: 14px
+				margin-top: 10px
+				color: #abb2b9
+
+			.inputs
+				margin-top: 30px
+
+				.error
+					color: #ec7063
+					font-size: 16px
+					font-weight: bold
+
+				.success
+					color: #58d68d
+					font-size: 16px
+					font-weight: bold
+
+				input, textarea
+					width: 100%
+					padding: 10px
+					margin-bottom: 20px
+
+				button
+					padding: 15px 60px
+					border: 2px solid #417ebb
+					background-color: transparent
+					text-transform: uppercase
+					color: #417ebb
+					border-radius: 6px
+					cursor: pointer
+					margin-top: 20px
+					transition: all .2s ease-in-out
+					font-weight: bold
+					font-size: 18px
+					float: right
+
+					&:hover
+						background-color: rgba(130, 224, 170, 0.5)
+
+		.information
+			width: 40%
+			padding: 0 10px
+			text-align: center
+
+			img
+				width: 100%
+				max-width: 300px
+				margin-bottom: 30px
+
+			.block
+				width: 100%
+				margin-bottom: 15px
+
+				.title
+					font-weight: bold
+					text-transform: uppercase
+					font-size: 14px
+					color: #abb2b9
+
+				.value
+					margin-top: 5px
+					color: #566573
+
+@media (max-width: 550px)
+	.contact
+		.holder
+			flex-direction: column
+
+			.form
+				width: 100%
+				margin-bottom: 50px
+
+			.information
+				width: 100%

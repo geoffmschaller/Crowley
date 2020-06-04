@@ -1,24 +1,26 @@
 import express, {Application, Response, Request, NextFunction} from 'express';
 import bodyParser from "body-parser";
+import ContactRouter from "./controllers/ContactController";
+import ReviewController from "./controllers/ReviewController";
+import path from "path";
 
 require('dotenv').config();
 require('pug');
 
-/*
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect("mongodb+srv://geoffmschaller:oz7@@@5t*1FMH*o3EPF4O$m73@crowley-5jvz8.mongodb.net/Crowley?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
 	useCreateIndex: true
 });
 const db = mongoose.connection;
-db.on('errors', console.errors.bind(console, 'connection errors:'));
-
- */
+db.on('errors', console.log.bind(console, 'connection errors:'));
 
 const app: Application = express();
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '/emails'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -32,6 +34,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 	next();
 });
 
-if (process.env.NODE_ENV != 'test') app.listen(5000);
+app.use('/contact', ContactRouter);
+app.use('/review', ReviewController);
 
-export default app;
+app.use('/', (req, res) => {
+	res.render('outbound_contact.pug', {name: "Geoff Schaller", email: "geoff@geoff.com", message: "Test message"});
+})
+
+app.listen(5000);

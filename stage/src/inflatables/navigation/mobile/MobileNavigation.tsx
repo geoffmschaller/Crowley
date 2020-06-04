@@ -1,15 +1,18 @@
 import React from 'react';
 import styles from './MobileNavigation.module.sass';
-import MAIN_LOGO from '../../../static/images/mainlogo2.png'
+import MAIN_LOGO from '../../../static/images/logos/mainlogo2.png'
+import {Link} from "react-router-dom";
 
 class MobileNavigation extends React.Component<any, any> {
 
 	state = {
-		sliderOpen: false
+		sliderOpen: false,
+		offset: 0
 	}
 
 	setSliderMode = (mode: boolean) => {
 		this.setState({sliderOpen: mode});
+		document.body.style.overflow = mode ? "hidden" : "auto";
 	}
 
 	render() {
@@ -24,16 +27,29 @@ class MobileNavigation extends React.Component<any, any> {
 				<div className={this.state.sliderOpen ? [styles.menu, styles.menuOpen].join(" ") : [styles.menu, styles.menuClosed].join(" ")}>
 					<div className={styles.closeBar} onClick={() => this.setSliderMode(false)}><i className="fas fa-times"/></div>
 					<div className={styles.item}>
-						<div>Interiors</div>
+						<Link to={"/"} onClick={() => this.setSliderMode(false)}>
+							<div>Home</div>
+						</Link>
 					</div>
 					<div className={styles.item}>
-						<div>Exteriors</div>
+						<Link to={"/interiors"} onClick={() => this.setSliderMode(false)}>
+							<div>Interiors</div>
+						</Link>
 					</div>
-					<div className={styles.item}>
-						<div>Custom Projects</div>
+					<div className={styles.item} onClick={() => this.setSliderMode(false)}>
+						<Link to={"/exteriors"}>
+							<div>Exteriors</div>
+						</Link>
 					</div>
-					<div className={styles.item}>
-						<div>Contact Us</div>
+					<div className={styles.item} onClick={() => this.setSliderMode(false)}>
+						<Link to={"/custom-projects"}>
+							<div>Custom Projects</div>
+						</Link>
+					</div>
+					<div className={styles.item} onClick={() => this.setSliderMode(false)}>
+						<Link to={"/contact"}>
+							<div>Contact Us</div>
+						</Link>
 					</div>
 				</div>
 			</div>

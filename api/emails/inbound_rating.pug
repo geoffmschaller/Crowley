@@ -1,0 +1,16 @@
+extends master
+
+block main_content
+    p.title #{header}
+    .breaker
+    .messageHolder
+        .to Hi Sean,
+        .message We just recieved a new user review from the website.
+        .inlet
+            .inlet-message #{message}
+            .inlet-from  #{name}
+            .inlet-email #{rating} / 5
+        .from
+            div - Clementine
+            .ps *beep boop boop beep*
+    .breaker

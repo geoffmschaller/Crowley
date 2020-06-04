@@ -3,44 +3,60 @@ $slant-color: #2874a6
 .imageHeader
 	width: 100%
 	height: 500px
-	overflow: hidden
-	background-position: center
-	background-attachment: fixed
 	text-align: center
-	margin-top: 0
-	padding: 5px
+	position: relative
 
-	.slant
-		width: 90%
-		max-width: 600px
-		margin: 150px auto 10px auto
-		background-color: $slant-color
-		transform: skew(-45deg)
-		padding: 10px
-
-		.text
-			color: white
-			font-size: 40px
-			transform: skew(45deg)
-			text-transform: uppercase
-
-	p
+	.background
 		width: 100%
-		max-width: 800px
-		margin: 20px auto
-		color: white
-		font-size: 20px
+		height: 500px
+		overflow: hidden
+		background-position: center
+		background-attachment: fixed
+		background-repeat: no-repeat
+		background-size: cover
+		text-align: center
+		margin-top: 0
+		padding: 5px
 
-	button
-		padding: 15px 60px
-		border: 1px solid white
-		background-color: rgba(255, 255, 255, 0.1)
-		text-transform: uppercase
-		color: white
-		border-radius: 6px
-		cursor: pointer
-		margin-top: 20px
-		transition: all .2s ease-in-out
+	.overlay
+		width: 100%
+		height: 500px
+		background-color: rgba(21, 67, 96, 0.3)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		flex-direction: column
 
-		&:hover
-			background-color: rgba(255, 255, 255, 0.3)
+		.slant
+			width: 90%
+			max-width: 600px
+			margin: 150px auto 10px auto
+			background-color: $slant-color
+			transform: skew(-45deg)
+			padding: 10px
+
+			.text
+				color: white
+				font-size: 40px
+				transform: skew(45deg)
+				text-transform: uppercase
+
+		p
+			width: 100%
+			max-width: 800px
+			margin: 20px auto
+			color: white
+			font-size: 20px
+			text-shadow: 1px 1px 1px #566573
+
+@media (max-width: 550px)
+	.imageHeader
+		.overlay
+			.slant
+				width: 80%
+
+				.text
+					font-size: 20px

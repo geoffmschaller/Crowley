@@ -1,54 +1,115 @@
-import CABINETS_STORAGE_MAIN from '../static/images/projects/shelving6.jpg';
-import CABINETS_STORAGE_ONE from '../static/images/projects/cabinet.jpg';
-import CABINETS_STORAGE_TWO from '../static/images/projects/cabinet2.jpg';
-import CABINETS_STORAGE_THREE from '../static/images/projects/cabinet3.jpg'
-import CABINETS_STORAGE_FOUR from '../static/images/projects/cabinet4.jpg'
-import PANELING_MAIN from '../static/images/projects/paneling.jpg';
-import PANELING_ONE from '../static/images/projects/paneling2.jpg';
-import PANELING_TWO from '../static/images/projects/paneling3.jpg';
-import PANELING_THREE from '../static/images/projects/paneling4.jpg';
-import PANELING_FOUR from '../static/images/projects/paneling5.jpg';
-import DOORS_MAIN from '../static/images/projects/door7.jpg';
-import DOORS_ONE from '../static/images/projects/door.jpg';
-import DOORS_TWO from '../static/images/projects/door4.jpg';
-import DOORS_THREE from '../static/images/projects/door5.jpg';
-import DOORS_FOUR from '../static/images/projects/door6.jpg';
-import ADDITIONS_MAIN from '../static/images/projects/ceiling3.jpg';
-import ADDITIONS_ONE from '../static/images/projects/ceiling.jpg';
-import ADDITIONS_TWO from '../static/images/projects/ceiling2.jpg';
-import ADDITIONS_THREE from '../static/images/projects/fireplace2.jpg';
-import ADDITIONS_FOUR from '../static/images/projects/fireplace.jpg';
-import INTERIOR_HEADER_IMAGE from '../static/images/interiors_header_bar.jpg';
 import CategoryInterface from "../interfaces/CategoryInterface";
 
 const INTERIORS: CategoryInterface = {
 	title: "Custom Interiors",
 	description: "It's time your family had a home interior as unique as you are! Now you can, and Crowley Construction can help!",
-	header: INTERIOR_HEADER_IMAGE,
+	header: require('../static/images/headers/interiors_header_bar.jpg'),
 	categories: [
 		{
 			title: "Cabinets & Storage",
 			description: "Whether it's a full kitchen remodel, bathroom vanity repair, custom closet storage, or a full wall entertainment center, Crowley Construction can design functional and beautiful storage for your home.",
-			mainImage: CABINETS_STORAGE_MAIN,
-			previewImages: [CABINETS_STORAGE_ONE, CABINETS_STORAGE_TWO, CABINETS_STORAGE_THREE, CABINETS_STORAGE_FOUR]
+			mainImage: require('../static/images/projects/interiors/cabinets-storage/shelving6.jpg'),
+			previewImages: [
+				require('../static/images/projects/interiors/cabinets-storage/shelving8.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving9.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet7.jpg'),
+			],
+			gallery: [
+				require('../static/images/projects/interiors/cabinets-storage/cabinet.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet2.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet3.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet4.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet5.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet6.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet7.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet8.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet9.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet10.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet11.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/cabinet12.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving2.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving3.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving5.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving6.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving7.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving8.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/shelving9.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage3.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage4.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage5.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage6.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage7.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage8.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage9.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage10.jpg'),
+				require('../static/images/projects/interiors/cabinets-storage/storage11.jpg'),
+			],
+			url: "/interiors/cabinets-storage"
 		},
 		{
 			title: "Paneling",
 			description: "Nothing impacts the feel of a room like the surrounding walls. Don't compromise for boring drywall any longer. Bring your walls to life with custom paneling from Crowley Construction.",
-			mainImage: PANELING_MAIN,
-			previewImages: [PANELING_ONE, PANELING_TWO, PANELING_THREE, PANELING_FOUR]
+			mainImage: require('../static/images/projects/interiors/paneling/paneling.jpg'),
+			previewImages: [
+				require('../static/images/projects/interiors/paneling/paneling7.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling2.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling4.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling3.jpg'),
+			],
+			gallery: [
+				require('../static/images/projects/interiors/paneling/paneling.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling2.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling3.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling4.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling5.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling6.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling7.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling8.jpg'),
+				require('../static/images/projects/interiors/paneling/paneling9.jpg'),
+			],
+			url: "/interiors/paneling"
 		},
 		{
 			title: "Doors & Entrances",
 			description: "From repairing a door that just doesn't close smoothly to building a custom door that's perfect for your space and style, we can help!",
-			mainImage: DOORS_MAIN,
-			previewImages: [DOORS_ONE, DOORS_TWO, DOORS_THREE, DOORS_FOUR]
+			mainImage: require('../static/images/projects/interiors/doors/door7.jpg'),
+			previewImages: [
+				require('../static/images/projects/interiors/doors/door6.jpg'),
+				require('../static/images/projects/interiors/doors/door.jpg'),
+				require('../static/images/projects/interiors/doors/door5.jpg'),
+				require('../static/images/projects/interiors/doors/door4.jpg'),
+			],
+			gallery: [
+				require('../static/images/projects/interiors/doors/door.jpg'),
+				require('../static/images/projects/interiors/doors/door4.jpg'),
+				require('../static/images/projects/interiors/doors/door5.jpg'),
+				require('../static/images/projects/interiors/doors/door6.jpg'),
+				require('../static/images/projects/interiors/doors/door7.jpg'),
+			],
+			url: "/interiors/doors-entrances"
 		},
 		{
 			title: "Home Additions",
 			description: "We offer a multitude of home renovation solutions to truly customize the interior of your home and transform it into the home of your dreams.",
-			mainImage: ADDITIONS_MAIN,
-			previewImages: [ADDITIONS_ONE, ADDITIONS_TWO, ADDITIONS_THREE, ADDITIONS_FOUR]
+			mainImage: require('../static/images/projects/interiors/home-additions/ceiling3.jpg'),
+			previewImages: [
+				require('../static/images/projects/interiors/home-additions/ceiling2.jpg'),
+				require('../static/images/projects/interiors/home-additions/fireplace.jpg'),
+				require('../static/images/projects/interiors/home-additions/mirror.jpg'),
+				require('../static/images/projects/interiors/home-additions/ceiling.jpg'),
+			],
+			gallery: [
+				require('../static/images/projects/interiors/home-additions/ceiling.jpg'),
+				require('../static/images/projects/interiors/home-additions/ceiling2.jpg'),
+				require('../static/images/projects/interiors/home-additions/ceiling3.jpg'),
+				require('../static/images/projects/interiors/home-additions/fireplace.jpg'),
+				require('../static/images/projects/interiors/home-additions/fireplace2.jpg'),
+				require('../static/images/projects/interiors/home-additions/mirror.jpg'),
+				require('../static/images/projects/interiors/home-additions/mirror2.jpg'),
+			],
+			url: "/interiors/home-additions"
 		}
 	]
 };

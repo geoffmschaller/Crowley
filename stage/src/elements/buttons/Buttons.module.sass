@@ -1,0 +1,57 @@
+$blue: #3498db
+$yellow: #f7dc6f
+$green: #82e0aa
+
+.slantedButton
+	padding: 10px 60px
+	width: 90%
+	max-width: 400px
+	margin: 0 auto
+	background-color: transparent
+	transform: skew(-45deg)
+	text-decoration: none
+	transition: all .2s ease-in-out
+	text-align: center
+
+	.text
+		transform: skew(45deg)
+		text-decoration: none
+		font-weight: bold
+		transition: all .2s ease-in-out
+
+	&:hover
+		.text
+			color: white
+			text-shadow: 1px 1px 1px #808b96
+
+
+.yellow
+	border: 3px solid $yellow
+
+	.text
+		color: $yellow
+
+	&:hover
+		background-color: $yellow
+
+.blue
+	border: 3px solid $blue
+
+	.text
+		color: $blue
+
+	&:hover
+		background-color: $blue
+
+.green
+	border: 3px solid $green
+
+	.text
+		color: $green
+
+	&:hover
+		background-color: $green
+
+@media (max-width: 550px)
+	.slantedButton
+		width: 80%

@@ -1,0 +1,73 @@
+
+.gallery
+	width: 100%
+
+	.holder
+		margin-top: 100px
+		text-align: center
+
+		.title
+			font-size: 24px
+			text-transform: uppercase
+			color: #566573
+			margin-bottom: 15px
+
+		.description
+			font-size: 14px
+			color: #808b96
+			width: 100%
+			max-width: 800px
+			margin: 0 auto
+
+		.images
+			display: flex
+			flex-direction: row
+			justify-content: center
+			flex-wrap: wrap
+			margin-top: 50px
+
+		img
+			width: 50%
+			max-width: 300px
+			margin: 30px 15px
+			-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.41)
+			-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.41)
+			box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.41)
+			cursor: pointer
+
+	.viewer
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 0
+		overflow: hidden
+
+		img
+			width: 95%
+			max-width: 1000px
+			margin: 0 auto
+			position: absolute
+			top: 20%
+			left: 0
+			right: 0
+			border: 10px solid white
+			border-radius: 10px
+
+	.open
+		height: 100vh
+		animation: fade-in 0.5s forwards
+
+@keyframes fade-in
+	0%
+		background-color: rgba(0, 0, 0, 0)
+
+	100%
+		background-color: rgba(0, 0, 0, .5)
+
+@media (max-width: 550px)
+	.gallery
+		.holder
+			img
+				width: 40%
+				margin: 30px 5px
