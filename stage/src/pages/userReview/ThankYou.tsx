@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './UserReview.module.sass';
-import WidthRestrictor from "../../utils/layout/WidthRestrictor";
+import WidthRestrictor from "../../layout/WidthRestrictor";
 import {Link} from "react-router-dom";
 import SlantedButton from "../../elements/buttons/SlantedButton";
 

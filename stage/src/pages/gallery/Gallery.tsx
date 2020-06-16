@@ -3,7 +3,7 @@ import styles from './Gallery.module.sass';
 import SubCategoryInterface from "../../interfaces/SubCategoryInterface";
 import DesktopNavigation from "../../inflatables/navigation/desktop/DesktopNavigation";
 import MobileNavigation from "../../inflatables/navigation/mobile/MobileNavigation";
-import WidthRestrictor from "../../utils/layout/WidthRestrictor";
+import WidthRestrictor from "../../layout/WidthRestrictor";
 import ImageHeader from "../../inflatables/headers/ImageHeader";
 
 interface GalleryPropsInterface {

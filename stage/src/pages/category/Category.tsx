@@ -3,7 +3,7 @@ import styles from './Category.module.sass';
 import CategoryInterface from "../../interfaces/CategoryInterface";
 import DesktopNavigation from "../../inflatables/navigation/desktop/DesktopNavigation";
 import MobileNavigation from "../../inflatables/navigation/mobile/MobileNavigation";
-import WidthRestrictor from "../../utils/layout/WidthRestrictor";
+import WidthRestrictor from "../../layout/WidthRestrictor";
 import ImageHeader from "../../inflatables/headers/ImageHeader";
 import SlantedButton from "../../elements/buttons/SlantedButton";
 import {Link} from "react-router-dom";

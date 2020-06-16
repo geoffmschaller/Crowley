@@ -3,7 +3,7 @@ import styles from './Contact.module.sass';
 import MAIN_LOGO from '../../static/images/logos/mainlogo2.png';
 import DesktopNavigation from "../../inflatables/navigation/desktop/DesktopNavigation";
 import MobileNavigation from "../../inflatables/navigation/mobile/MobileNavigation";
-import WidthRestrictor from "../../utils/layout/WidthRestrictor";
+import WidthRestrictor from "../../layout/WidthRestrictor";
 import CONTACT_HEADER_IMAGE from "../../static/images/headers/contact_header_bar.jpg";
 import ImageHeader from "../../inflatables/headers/ImageHeader";
 import ContactAPICaller from "../../api/ContactAPICaller";

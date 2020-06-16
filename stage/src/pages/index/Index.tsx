@@ -6,11 +6,13 @@ import BLOCK_MENU_ITEMS from "../../data/blockMenu";
 import BlockMenuInterface from "../../interfaces/BlockMenuInterface";
 import DesktopNavigation from "../../inflatables/navigation/desktop/DesktopNavigation";
 import MobileNavigation from "../../inflatables/navigation/mobile/MobileNavigation";
-import WidthRestrictor from "../../utils/layout/WidthRestrictor";
+import WidthRestrictor from "../../layout/WidthRestrictor";
 import {Link} from "react-router-dom";
 import SlantedButton from "../../elements/buttons/SlantedButton";
+import InstagramFeed from "../../inflatables/social/InstagramFeed/InstagramFeed";
 
 class Index extends React.Component<any, any> {
+
 	render() {
 		return (
 			<div className={styles.index}>
@@ -80,14 +82,9 @@ class Index extends React.Component<any, any> {
 						</div>
 					</WidthRestrictor>
 				</div>
-				{/*}
 				<WidthRestrictor>
-					<div className={styles.instagram}>
-						<div className={styles.title}>#crowleyconstructionid</div>
-						<div className={styles.feed}/>
-					</div>
+					<InstagramFeed/>
 				</WidthRestrictor>
-				{*/}
 			</div>
 		);
 	}
