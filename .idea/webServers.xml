@@ -3,14 +3,14 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="d971b314-c0d3-4005-bd83-43eace4ab909" name="API" url="http://api.crowleyconstructionid.com">
-        <fileTransfer rootFolder="/server" host="api.crowleyconstructionid.com" port="21">
+        <fileTransfer rootFolder="/server" accessType="FTPS" host="api.crowleyconstructionid.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>
       <webServer id="064c36c3-330b-43ca-a97d-a9da152cd3fd" name="Front End" url="http://crowleyconstructionid.com">
-        <fileTransfer rootFolder="/public_html" host="crowleyconstructionid.com" port="21">
+        <fileTransfer rootFolder="/public_html" accessType="FTPS" host="crowleyconstructionid.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -9,7 +9,7 @@ require('pug');
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://geoffmschaller:oz7@@@5t*1FMH*o3EPF4O$m73@crowley-5jvz8.mongodb.net/Crowley?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DB_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
