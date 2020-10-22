@@ -1,16 +1,15 @@
-import APIResponse from "../interfaces/APIResponse";
-import axios from 'axios';
+import Axios, {AxiosResponse} from "axios";
 
-const ContactAPICaller = async (name: string, email: string, message: string): Promise<APIResponse> => {
+//https://cors-anywhere.herokuapp.com/
 
-	const result = await axios.post('https://www.api.crowleyconstructionid.com/contact', {name: name, email: email, message: message});
+const contactUrl: string = "https://api.crowleyconstructionid.com/contact/new";
 
-	return {
-		status: result.data.status,
-		message: result.data.message,
-		payload: result.data.payload
-	}
+const SendContactForm = async (name: string, email: string, message: string): Promise<AxiosResponse> => {
+	return await Axios.post(contactUrl, {
+		name: name,
+		email: email,
+		message: message
+	});
+};
 
-}
-
-export default ContactAPICaller;
+export default SendContactForm;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import styles from './Contact.module.sass';
 import MAIN_LOGO from '../../static/images/logos/mainlogo2.png';
 import DesktopNavigation from "../../inflatables/navigation/desktop/DesktopNavigation";
@@ -11,44 +11,36 @@ import ContactAPICaller from "../../api/ContactAPICaller";
 class Contact extends React.Component<any, any> {
 
 	state = {
+		error: true,
+		result: "",
+		sending: false,
 		name: "",
 		email: "",
-		message: "",
-		response: {
-			status: 0,
-			message: "",
-			payload: {}
-		}
-	}
+		message: ""
+	};
 
-	updateName = (value: string) => {
-		let s = {...this.state};
-		s.name = value;
+	updateValue = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		let input: string = event.target.name;
+		let s: React.ComponentState = {...this.state};
+		s[input] = event.target.value;
 		this.setState(s);
-	}
-
-	updateEmail = (value: string) => {
-		let s = {...this.state};
-		s.email = value;
-		this.setState(s);
-	}
-
-	updateMessage = (value: string) => {
-		let s = {...this.state};
-		s.message = value;
-		this.setState(s);
-	}
+	};
 
 	sendContact = async () => {
-		let s = {...this.state};
-		s.response = await ContactAPICaller(this.state.name, this.state.email, this.state.message);
-		if (s.response.status === 200) {
-			s.message = "";
-			s.name = "";
-			s.email = "";
-		}
-		this.setState(s);
-	}
+		await this.setState({sending: true});
+		let results = await ContactAPICaller(this.state.name, this.state.email, this.state.message);
+		if (results.data.errors.length > 0)
+			this.setState({error: true, result: results.data.message});
+		else
+			this.setState({
+				error: false,
+				result: results.data.message,
+				name: "",
+				email: "",
+				message: ""
+			});
+		await this.setState({sending: false});
+	};
 
 	render() {
 		return (
@@ -61,24 +53,34 @@ class Contact extends React.Component<any, any> {
 						<div className={styles.form}>
 							<div className={styles.title}>Contact Us</div>
 							<div className={styles.description}>
-								We'd love to hear from you regarding any project big or small. Reach out to us using the contact form below and a member of our team will get back
+								We'd love to hear from you regarding any project big or small. Reach out to us using the contact form below and a
+								member of our team will get back
 								to
 								you.
 								We look forward to making your dream project a reality.
 							</div>
 							<div className={styles.inputs}>
-								<input type="text" placeholder={"Full Name"} value={this.state.name} onChange={(event: any) => this.updateName(event.target.value)}/>
-								<input type="text" placeholder={"Your Email"} value={this.state.email} onChange={(event: any) => this.updateEmail(event.target.value)}/>
-								<textarea placeholder={"How can we help you?"} value={this.state.message} onChange={(event: any) => this.updateMessage(event.target.value)}/>
-								<button onClick={() => this.sendContact()}>Submit</button>
+								<input name="name" type="text" placeholder={"Full Name"} value={this.state.name}
+								       onChange={(event) => this.updateValue(event)}/>
+								<input name="email" type="text" placeholder={"Email"} value={this.state.email}
+								       onChange={(event) => this.updateValue(event)}/>
+								<textarea name="message" placeholder={"Your Message"} value={this.state.message}
+								          onChange={(event) => this.updateValue(event)}/>
+								<button disabled={this.state.sending} onClick={() => this.sendContact()}>
+									{
+										this.state.sending
+											? <i className="fas fa-spinner"/>
+											: <div>Send</div>
+									}
+								</button>
 								{
-									this.state.response.status === 500
-										? <div className={styles.error}>{this.state.response.message}</div>
+									this.state.error
+										? <div className={styles.error}>{this.state.result.toUpperCase()}</div>
 										: null
 								}
 								{
-									this.state.response.status === 200
-										? <div className={styles.success}>{this.state.response.message}</div>
+									!this.state.error
+										? <div className={styles.success}>{this.state.result}</div>
 										: null
 								}
 							</div>

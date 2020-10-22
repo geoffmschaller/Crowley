@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/api" libraries="{Crowley/api/node_modules}" />
     <file url="file://$PROJECT_DIR$/stage" libraries="{Crowley/stage/node_modules}" />
-    <file url="PROJECT" libraries="{@types/cheerio, @types/express, @types/mongoose, @types/react, Crowley/api/node_modules, Crowley/stage/node_modules}" />
+    <file url="PROJECT" libraries="{@types/cheerio, @types/express, Crowley/stage/node_modules}" />
   </component>
 </project>
